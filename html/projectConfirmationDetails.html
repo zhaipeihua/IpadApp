@@ -1,0 +1,417 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/projectConfirmationDetails.css" />
+	</head>
+	<style>
+		/* ipad横屏 */
+		
+		@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+			.signature {
+				width: 1.15rem;
+				height: 0.4rem;
+				line-height: 0.4rem !important;
+				font-size: 0.25rem;
+				margin-top: 0.1rem;
+			}
+			header {
+				height: 0.59rem !important;
+			}
+			.backIcon {
+				width: 0.35rem;
+				height: 0.59rem;
+			}
+			.title {
+				height: 0.59rem !important;
+				line-height: 0.59rem !important;
+				font-size: 0.28rem !important;
+			}
+			.mui-content {
+				padding-top: 0.59rem !important;
+			}
+			.mui-table-view-cell>a:not(.mui-btn) {
+				height: .59rem;
+				line-height: .59rem;
+			}
+			.icon_com {
+				height: 0.59rem;
+			}
+			.arrList>a>span {
+				font-size: 0.22rem;
+				background-size: 0.22rem 0.22rem;
+			}
+			.arrList>a>small {
+				font-size: 0.22rem;
+			}
+			.mui-table-view-cell>a:not(.mui-btn) {
+				font-size: 0.22rem;
+			}
+			.mui-navigate-right:after,
+			.mui-push-right:after {
+				font-size: 0.34rem;
+			}
+			.color_name,
+			.projectNum {
+				height: .3rem;
+				line-height: .3rem;
+				font-size: 0.22rem;
+			}
+			.editbox,
+			.editbox1,
+			.editbox2 {
+				line-height: 0.28rem;
+				font-size: 0.22rem;
+				height: 1rem !important;
+			}
+			.set_mon,
+			.intre_mon {
+				font-size: 0.22rem;
+			}
+			.submitBtn {
+				line-height: 0.6rem;
+			}
+		}
+		/* ipad竖屏 */
+		
+		@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+			.editbox,
+			.editbox1,
+			.editbox2 {
+				line-height: 0.36rem;
+				font-size: 0.26rem;
+				height: 1.4rem !important;
+			}
+			.color_name,
+			.projectNum {
+				height: .36rem;
+				line-height: .36rem;
+				font-size: 0.24rem;
+			}
+			.set_mon,
+			.intre_mon {
+				font-size: 0.22rem;
+			}
+		}
+		
+		.mui-preview-image.mui-fullscreen {
+			position: fixed;
+			z-index: 20;
+			background-color: #000;
+		}
+		
+		.mui-preview-header,
+		.mui-preview-footer {
+			position: absolute;
+			width: 100%;
+			left: 0;
+			z-index: 10;
+		}
+		
+		.mui-preview-header {
+			height: 44px;
+			top: 0;
+		}
+		
+		.mui-preview-footer {
+			height: 50px;
+			bottom: 0px;
+		}
+		
+		.mui-preview-header .mui-preview-indicator {
+			display: block;
+			line-height: 25px;
+			color: #fff;
+			text-align: center;
+			margin: 15px auto 4px auto;
+			width: 70px;
+			background-color: rgba(0, 0, 0, 0.4);
+			border-radius: 12px;
+			font-size: 16px;
+		}
+		
+		.mui-preview-image {
+			display: none;
+			-webkit-animation-duration: 0.5s;
+			animation-duration: 0.5s;
+			-webkit-animation-fill-mode: both;
+			animation-fill-mode: both;
+		}
+		
+		.mui-preview-image.mui-preview-in {
+			-webkit-animation-name: fadeIn;
+			animation-name: fadeIn;
+		}
+		
+		.mui-preview-image.mui-preview-out {
+			background: none;
+			-webkit-animation-name: fadeOut;
+			animation-name: fadeOut;
+		}
+		
+		.mui-preview-image.mui-preview-out .mui-preview-header,
+		.mui-preview-image.mui-preview-out .mui-preview-footer {
+			display: none;
+		}
+		
+		.mui-zoom-scroller {
+			position: absolute;
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: flex;
+			-webkit-box-align: center;
+			-webkit-align-items: center;
+			align-items: center;
+			-webkit-box-pack: center;
+			-webkit-justify-content: center;
+			justify-content: center;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			-webkit-backface-visibility: hidden;
+		}
+		
+		.mui-zoom {
+			-webkit-transform-style: preserve-3d;
+			transform-style: preserve-3d;
+		}
+		
+		.mui-slider .mui-slider-group .mui-slider-item img {
+			width: auto;
+			height: auto;
+			max-width: 100%;
+			max-height: 100%;
+		}
+		
+		.mui-android-4-1 .mui-slider .mui-slider-group .mui-slider-item img {
+			width: 100%;
+		}
+		
+		.mui-android-4-1 .mui-slider.mui-preview-image .mui-slider-group .mui-slider-item {
+			display: inline-table;
+		}
+		
+		.mui-android-4-1 .mui-slider.mui-preview-image .mui-zoom-scroller img {
+			display: table-cell;
+			vertical-align: middle;
+		}
+		
+		.mui-preview-loading {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			display: none;
+		}
+		
+		.mui-preview-loading.mui-active {
+			display: block;
+		}
+		
+		.mui-preview-loading .mui-spinner-white {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-left: -25px;
+			margin-top: -25px;
+			height: 50px;
+			width: 50px;
+		}
+		
+		.mui-preview-image img.mui-transitioning {
+			-webkit-transition: -webkit-transform 0.5s ease, opacity 0.5s ease;
+			transition: transform 0.5s ease, opacity 0.5s ease;
+		}
+		
+		@-webkit-keyframes fadeIn {
+			0% {
+				opacity: 0;
+			}
+			100% {
+				opacity: 1;
+			}
+		}
+		
+		@keyframes fadeIn {
+			0% {
+				opacity: 0;
+			}
+			100% {
+				opacity: 1;
+			}
+		}
+		
+		@-webkit-keyframes fadeOut {
+			0% {
+				opacity: 1;
+			}
+			100% {
+				opacity: 0;
+			}
+		}
+		
+		@keyframes fadeOut {
+			0% {
+				opacity: 1;
+			}
+			100% {
+				opacity: 0;
+			}
+		}
+		
+		p img {
+			max-width: 100%;
+			height: auto;
+		}
+	</style>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-pull-left backIcon"></a>
+			<h1 class="mui-title title">项目确认单详情</h1>
+			<a class="mui-pull-right signature" style="display: none;">客户签字</a>
+		</header>
+		<div id="homepage" class="mui-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell arrList">
+					<a>
+						<span class="dateTit">日&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;期：</span>
+						<small class="date"></small>
+					</a>
+				</li>
+				<li class="mui-table-view-cell arrList">
+					<a>
+						<span class="custNameTit">客&nbsp;&nbsp;户&nbsp;&nbsp;姓&nbsp;&nbsp;名：</span>
+						<small class="custName"></small>
+					</a>
+				</li>
+				<li class="mui-table-view-cell arrList" style="padding: 0 !important;">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell mui-collapse" style="padding: 1px">
+							<label style="float: left" class="icon_com projectTit"></label>
+							<a class="mui-navigate-right" href="#">成&nbsp;&nbsp;单&nbsp;&nbsp;项&nbsp;&nbsp;目</a>
+							<div class="mui-collapse-content" style="padding: 0 0.3rem 0.3rem 0.3rem;">
+								<div class="newAddProjects flex-container listBox2"></div>
+							</div>
+						</li>
+					</ul>
+
+				</li>
+				<li class="mui-table-view-cell arrList">
+					<a>
+						<span class="transactionPriceTit">金&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;额：</span>
+						<small class="transactionPrice"></small>
+					</a>
+				</li>
+				<li class="mui-table-view-cell arrList">
+					<a>
+						<span class="subsciption_part">订&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;金：</span>
+						<small class="self_money"></small>
+					</a>
+				</li>
+				<li class="mui-table-view-cell arrList">
+					<a>
+						<span class="actualDeliveryTit">项目实际支付：</span>
+						<small class="actualDelivery"></small>
+					</a>
+				</li>
+				<li class="mui-table-view-cell arrList">
+					<a>
+						<span class="cashPaymentTit">其中现金支付：</span>
+						<small class="cashPayment"></small>
+					</a>
+				</li>
+				<li class="mui-table-view-cell arrList">
+					<a>
+						<span class="posPaymentTit">其中POS机支付：</span>
+						<small class="posPayment"></small>
+					</a>
+				</li>
+<!-- 				<li class="mui-table-view-cell arrList">
+					<a>
+						<span id="store_money">店家代收：</span>
+						<small class="store"></small>
+					</a>
+				</li> -->
+				<li class="mui-table-view-cell arrList">
+					<a>
+						<span class="transactionPriceTit">以往订金转入：</span>
+						<small class="subscription"></small>
+					</a>
+				</li>
+				<li class="mui-table-view-cell arrList" style="padding: 0 !important;">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell mui-collapse" style="padding: 1px">
+							<label style="float: left" class="icon_com sendProjectTit"></label>
+							<a class="mui-navigate-right" href="#">赠&nbsp;&nbsp;送&nbsp;&nbsp;项&nbsp;&nbsp;目</a>
+							<div class="mui-collapse-content" style="padding: 0 0.3rem 0.3rem 0.3rem;">
+								<div id="giveProjects" class="nPayMoney flex-container"></div>
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li class="mui-table-view-cell arrList">
+					<a>
+						<span class="counselorTit">市场咨询师：</span>
+						<small class="counselor"></small>
+					</a>
+				</li>
+				<li class="mui-table-view-cell arrList">
+					<a>
+						<span class="stylistTit">设&emsp;&nbsp;计&emsp;&nbsp;师：</span>
+						<small class="stylist"></small>
+					</a>
+				</li>
+				<li class="mui-table-view-cell arrList">
+					<a style="border-bottom: 1px solid #eee;">
+						<span class="stylistRemack">设计师备注：</span>
+					</a>
+					<div class="noticeBox">
+						<!--<p class="remark"></p>-->
+						<textarea style="padding-left: 0.45rem !important;" class="remark" rows="5"></textarea>
+					</div>
+				</li>
+				<li class="mui-table-view-cell arrList">
+					<a>
+						<span class="paymentTit">财&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;务：</span>
+						<small class="payment"></small>
+					</a>
+				</li>
+				<li class="mui-table-view-cell arrList">
+					<a style="border-bottom: 1px solid #eee;">
+						<span class="custNameTit">客户签字：</span>
+					</a>
+					<div style="width: 50%;margin: 0 auto;">
+						<img class="imgCustomer" src="" alt="" width="100%" data-preview-src="" data-preview-group="1" />
+					</div>
+				</li>
+			</ul>
+			<div class="btnBox" style="display: none;"><button class="submitBtn" onclick="submit()">提交</button></div>
+		</div>
+		<div class="popUp" style="display: none;">
+			<p>请确认签名正确后，点"<span>确定</span>"提交！</p>
+			<div class="popUpBoxs">
+				<a href="javascript:;" class="cancel">取消</a>
+				<a href="javascript:;" class="notarize">确定</a>
+			</div>
+		</div>
+		<div class="mark" style="display: none;"></div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/jquery-3.2.1.min.js"></script>
+		<script src="../js/rem.js"></script>
+		<script src="../js/mui.zoom.js"></script>
+		<script src="../js/mui.previewimage.js"></script>
+		<script src="../js/projectConfirmationDetails.js"></script>
+		<script src="../js/SearchNumber.js"></script>
+	</body>
+
+</html>

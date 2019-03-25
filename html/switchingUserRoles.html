@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>用户角色切换</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="../css/globlestyles.css">
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/switchingUserRoles.css" />
+	</head>
+	<style type="text/css">
+		/* 判断ipad */
+		
+		@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+			.logo {
+				width: 80%;
+				margin: 0 auto;
+			}
+			form div {
+				width: 80%;
+				margin: 0 auto;
+			}
+		}
+		/* ipad横屏 */
+		
+		@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+			.logo {
+				width: 40%;
+			}
+			form div {
+				width: 48%;
+			}
+			form {
+				padding: 0.95rem 0 0 0;
+			}
+			.customer {
+				margin-top: 0.5rem;
+			}
+			.customer,
+			.password {
+				height: 0.6rem;
+			}
+			.submit {
+				height: 0.5rem;
+				line-height: 0.5rem;
+				font-size:0.24rem ;
+				margin-top: 0.8rem;
+			}
+			form div input {
+				width: 62%;
+				line-height: 0.36rem;
+				font-size: 0.18rem;
+				margin-left: 0.05rem;
+			}
+			form div input:active {
+				background: #eee;
+			}
+			.sbmit div {
+				height: 0.4rem;
+			}
+			.forgive,
+			.nowLogin {
+				font-size: 0.16rem;
+			}
+			.customer label,.password label {
+				background-size: .22rem .22rem;
+				font-weight: normal;
+			}
+		}
+		/* ipad竖屏 */
+		
+		@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+			.logo {
+				width: 58%;
+			}
+			form div {
+				width: 62%;
+			}
+			form {
+				padding: 1.8rem 0 0 0;
+			}
+			.customer {
+				margin-top: 1.2rem;
+			}
+			.customer,
+			.password {
+				height: 0.8rem;
+			}
+			.submit {
+				height: 0.76rem;
+				line-height: 0.76rem;
+			}
+			.forgive,
+			.nowLogin {
+				font-size: 0.24rem;
+			}
+			.sbmit div {
+				height: 0.6rem;
+			}
+			form div input {
+				font-size: 0.24rem;
+				line-height: 0.48rem;
+			}
+		}
+	</style>
+	<body>
+		<header class="mui-bar mui-bar-nav head">
+			<!--<a class="mui-pull-left backIcon"></a>-->
+			<h1 class="mui-title title">选择需要登录的账号角色</h1>
+		</header>
+		<div class="mui-content" style="position: relative">
+			<ul class="userBtn"></ul>
+			<div class="cancel">退出登录</div>
+		</div>
+	</body>
+	<script src="../js/jquery-3.2.1.min.js"></script>
+	<script src="../js/rem.js"></script>
+	<script src="../js/mui.min.js"></script>
+	<script src="../js/switchingUserRoles.js"></script>
+	<script src="../js/SearchNumber.js"></script>
+</html>

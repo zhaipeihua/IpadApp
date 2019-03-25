@@ -1,0 +1,142 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+input:-webkit-autofill {
+	box-shadow: 0 0 0px 1000px white inset !important;
+}
+
+input::-webkit-input-placeholder {
+	color: #999;	
+}
+
+input:-moz-placeholder {
+	color: #999;
+
+}
+
+input::-moz-placeholder {
+	color: #999;
+}
+
+input:-ms-input-placeholder {
+	color: #999;
+}
+
+form {
+	font-size: .28rem;
+	width: 100%;
+	padding: 1.6rem .2rem 0 .2rem;
+	height: 100%;
+}
+
+form div {
+	display: -ms-flex;
+	display: -webkit-flex;
+	display: flex;
+	align-items: center;
+	-webkit-align-items: center;
+	width: 100%;
+}
+
+.customer,
+.password {
+	padding-left: .3rem;
+	border-bottom: 1px solid #f2f2f2;
+	height: 1.18rem;
+}
+
+.sbmit div {
+	height: 1rem;
+}
+
+form div input {
+	font-size: .28rem;
+	margin-left: .2rem;
+	line-height: 0.7rem;
+	width: 3.5rem;
+	color: #333 !important;
+}
+
+.customer label {
+	width: .49rem;
+	height: .49rem;
+	background: #fff url(../iconAll/img/me.png) center center no-repeat;
+	background-size: .3rem .3rem;
+}
+
+.password label {
+	width: .49rem;
+	height: .49rem;
+	background: #fff url(../iconAll/img/passa.png) center center no-repeat;
+	background-size: .3rem .3rem;
+}
+
+.logo {
+	width: 100%;
+	background-size: 100% 100%;
+	margin-bottom: .94rem;
+	color: #585858;
+}
+
+.logo div {
+	justify-content: center;
+}
+
+.box {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.left {
+	padding-left: .3rem;
+	justify-content: flex-start;
+	-webkit-justify-content: flex-start;
+	/*width: 2.5rem;*/
+}
+
+.right {
+	/*width: 2.5rem;*/
+	padding-right: .2rem;
+	/*margin-left: 2.2rem;*/
+	justify-content: flex-end;
+	-webkit-justify-content: flex-end;
+}
+
+.submit {
+	display: inline-block;
+	margin-top: 1.3rem;
+	font-size: .36rem;
+	text-align: center;
+	width: 100%;
+	height: 1rem;
+	line-height: 1rem;
+	/*background: -webkit-linear-gradient(left, #18b2c9, #12c6c9);*/
+	background: -webkit-linear-gradient(left, #0486fe, #04a7ff);
+	/* Safari 5.1 - 6.0 */
+	color: #fff;
+	border-radius: 99rem;
+}
+
+.formtips {
+	color: #f00;
+}
+
+.forgive {
+	color: #666;
+}
+
+.nowLogin {
+	color: #18b2c9;
+	font: 0.3rem;
+}
+
+/*提示字*/
+.onSuccess,.onError{
+	position: absolute;
+	right: 0.2rem;
+	font-size: 0.2rem;
+	color: #eb6238;
+}

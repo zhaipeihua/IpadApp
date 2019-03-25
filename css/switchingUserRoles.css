@@ -1,0 +1,69 @@
+html,body{
+	width: 100%;
+	height: 100%;
+}
+.head{
+	height: .89rem !important;
+    line-height: .89rem;
+    width: 100%;
+    background: -webkit-linear-gradient(left, #0486fe, #04a7ff);
+    color: #fff;
+    position: fixed;
+    z-index: 99;
+    -webkit-box-shadow: 0 0px 0px #ccc !important;
+    box-shadow: 0 0px 0px #ccc !important;
+}
+.title {
+    left: 1.6rem!important;
+    right: 1.6rem!important;
+    color: #fff;
+    height: 0.89rem !important;
+    line-height: 0.89rem !important;
+    font-size: 0.36rem !important;
+}
+.backIcon {
+    width: .5rem;
+    height: .89rem;
+    display: inline-block;
+    float: left;
+    background: url(../iconAll/img/arrow.png) left center no-repeat;
+    background-size: 50% 50%;
+}
+
+.mui-bar-nav~.mui-content {
+    height: 100%;
+    padding-top: 0.89rem;
+    background-color: #fff !important;
+}
+.userBtn{
+	width: 100%;
+	text-align: center;
+}
+
+.userBtn>li{
+	width: 52%;
+	margin: 0.5rem auto;
+	border: 1px solid #eee;
+	border-radius: 0.5rem;
+	overflow: hidden;
+}
+.userBtn>li>a{
+	display: block;
+	width: 100%;
+	height: 0.7rem;
+	line-height: 0.7rem;
+	background: -webkit-linear-gradient(left, #0486fe, #04a7ff);
+	color: #fff;
+	font-size: 0.3rem;
+}
+.cancel{
+    position: fixed;
+    bottom:.3rem;
+    right: .3rem;
+/*    width: 1.5rem;*/
+	font-size: .3rem;
+    padding: .15rem;
+    border-radius: .1rem;
+    background: -webkit-linear-gradient(left, #0486fe, #04a7ff);
+    color: #fff;
+}

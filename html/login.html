@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<!--禁止浏览器缩放-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type" />
+		<meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT">
+		<!--iPhone 手机上设置手机号码不被显示为拨号链接）-->
+		<meta content="telephone=no, address=no" name="format-detection" />
+		<!--IOS私有属性，可以添加到主屏幕-->
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<!--屏幕顶部条的颜色-->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<!-- 强制竖屏 -->
+		<meta name="screen-orientation" content="portrait">
+		<title>Login</title>
+		<link rel="stylesheet" href="../css/globlestyles.css" />
+		<link rel="stylesheet" href="../css/login.css" />
+	</head>
+	<style type="text/css">
+		/* 判断ipad */
+		
+		@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+			.logo {
+				width: 80%;
+				margin: 0 auto;
+			}
+			form div {
+				width: 80%;
+				margin: 0 auto;
+			}
+		}
+		/* ipad横屏 */
+		
+		@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+			.logo {
+				width: 40%;
+			}
+			form div {
+				width: 48%;
+			}
+			form {
+				padding: 0.95rem 0 0 0;
+			}
+			.customer {
+				margin-top: 0.5rem;
+			}
+			.customer,
+			.password {
+				height: 0.6rem;
+			}
+			.submit {
+				height: 0.5rem;
+				line-height: 0.5rem;
+				font-size:0.24rem ;
+				margin-top: 0.8rem;
+			}
+			form div input {
+				width: 62%;
+				line-height: 0.36rem;
+				font-size: 0.18rem;
+				margin-left: 0.05rem;
+			}
+			form div input:active {
+				background: #eee;
+			}
+			.sbmit div {
+				height: 0.4rem;
+			}
+			.forgive,
+			.nowLogin {
+				font-size: 0.16rem;
+			}
+			.customer label,.password label {
+				background-size: .22rem .22rem;
+				font-weight: normal;
+			}
+		}
+		/* ipad竖屏 */
+		
+		@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+			.logo {
+				width: 58%;
+			}
+			form div {
+				width: 62%;
+			}
+			form {
+				padding: 1.8rem 0 0 0;
+			}
+			.customer {
+				margin-top: 1.2rem;
+			}
+			.customer,
+			.password {
+				height: 0.8rem;
+			}
+			.submit {
+				height: 0.76rem;
+				line-height: 0.76rem;
+			}
+			.forgive,
+			.nowLogin {
+				font-size: 0.24rem;
+			}
+			.sbmit div {
+				height: 0.6rem;
+			}
+			form div input {
+				font-size: 0.24rem;
+				line-height: 0.48rem;
+			}
+		}
+	</style>
+
+	<body>
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<form action="###">
+						<div class="logo"><img src="../iconAll/img/copy.png" width="100%" /></div>
+						<div class="customer">
+							<label></label>
+							<input type="text" placeholder="请输入账号名" id="username" class="required">
+						</div>
+						<div class="password">
+							<label></label>
+							<input type="password" placeholder="请输入密码" id="passerword" class="required">
+						</div>
+						<!--<div class="sbmit">
+							<div class="box">
+								<div class="left"><span class="forgive">忘记密码</span></div>
+								<div class="right"><span class="nowLogin">立即注册</span></div>
+							</div>
+						</div>-->
+						<div class="btn">
+							<a href="###" class="submit" id="send"><span>登录</span></a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="../js/rem.js"></script>
+	<script type="text/javascript" src="../js/login.js"></script>
+	<script src="../js/SearchNumber.js"></script>
+</html>

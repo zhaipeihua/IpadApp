@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<!--禁止浏览器缩放-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type" />
+		<meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT">
+		<!--iPhone 手机上设置手机号码不被显示为拨号链接）-->
+		<meta content="telephone=no, address=no" name="format-detection" />
+		<!--IOS私有属性，可以添加到主屏幕-->
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<!--屏幕顶部条的颜色-->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<!-- 强制竖屏 -->
+		<meta name="screen-orientation" content="portrait">
+		<title>项目确认单列表</title>
+		<link rel="stylesheet" href="../css/globlestyles.css">
+		<link rel="stylesheet" href="../css/mui.css" />
+		<link rel="stylesheet" href="../css/mui.picker.min.css" />
+		<link rel="stylesheet" href="../css/projectConfirmationList.css">
+	</head>
+	<style>
+		/* 判断ipad */
+		
+		@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+			header {
+				height: 2.7rem !important;
+			}
+			.search-box {
+				padding: 0.155rem 0.3rem;
+				height: 1rem !important;
+			}
+			.select-time {
+				height: 0.85rem;
+				line-height: 0.85rem;
+			}
+			.start-time,
+			.end-time {
+				height: 0.85rem;
+				line-height: 0.85rem;
+			}
+			.mui-bar-nav~.mui-content {
+				padding-top: 2.71rem !important;
+			}
+			#pullrefresh {
+				padding-top: 2.71rem !important;
+			}
+			.personalInfo {
+				height: 0.9rem;
+				line-height: 0.9rem;
+			}
+			.infoLeft,
+			.infoRight {
+				height: 0.9rem;
+				line-height: 0.9rem;
+				font-size: 0.24rem;
+			}
+			.infoRight>span {
+				font-size: 0.24rem;
+				padding-left: 0.4rem;
+			}
+			.infoRight>small {
+				font-size: 0.24rem;
+			}
+			.search-box>span>input[type=text] {
+				color: #444;
+			}
+		}
+		/* ipad横屏 */
+		
+		@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+			.head {
+				height: 0.59rem;
+			}
+			.title {
+				line-height: 0.59rem;
+				font-size: 0.28rem;
+			}
+			.iconTit {
+				width: 0.5rem;
+				height: 0.5rem;
+				margin-top: 0.045rem;
+			}
+			header {
+				height: 2rem !important;
+			}
+			.search-box {
+				padding: 0.155rem 0.3rem;
+				height: 0.8rem !important;
+			}
+			.search-box>span {
+				height: 0.5rem !important;
+				line-height: 0.5rem !important;
+			}
+			.search-box>span>input[type=text] {
+				height: 0.5rem !important;
+				font-size: 0.22rem;
+			}
+			.select-time {
+				height: 0.65rem;
+				line-height: 0.65rem;
+			}
+			.start-time,
+			.end-time {
+				height: 0.65rem;
+				line-height: 0.65rem;
+			}
+			.start-time>a,
+			.end-time>a {
+				font-size: 0.24rem;
+			}
+			.start-time>span,
+			.end-time>span {
+				vertical-align: -8%;
+			}
+			.select-time>small {
+				margin-top: 0.12rem;
+			}
+			.mui-bar-nav~.mui-content {
+				padding-top: 2.05rem !important;
+			}
+			#pullrefresh {
+				padding-top: 2.05rem !important;
+			}
+			.personalInfo {
+				height: 0.6rem;
+				line-height: 0.6rem;
+			}
+			.infoLeft,
+			.infoRight {
+				height: 0.6rem;
+				line-height: 0.6rem;
+				font-size: 0.22rem;
+				font-weight: normal;
+			}
+			.infoRight>span {
+				font-size: 0.22rem;
+				padding-left: 0.3rem;
+			}
+			.infoRight>small {
+				font-size: 0.22rem;
+			}
+			.personalInfo {
+				margin-top: 0.06rem;
+			}
+			.infoLeft>span,
+			.infoLeft>small,
+			.infoRight>span,
+			.infoRight>small {
+				font-size: 0.22rem;
+			}
+			.infoRight>span {
+				background-size: 0.24rem 0.22rem;
+				padding-left: 0.3rem;
+			}
+			.infoLeft>span {
+				padding-left: 0.24rem;
+				background-size: 0.23rem 0.29rem;
+			}
+			/*侧栏*/
+			.titleBox {
+				padding-top: 1.3rem;
+				padding-bottom: 0.6rem;
+			}
+			.exitBtn {
+				width: 77%;
+				bottom: 1.1rem;
+				line-height: 0.48rem;
+				left: calc(50% - 36.5%);
+			}
+			/*下来刷新*/
+			.mui-bar-nav~.mui-content .mui-pull-top-pocket {
+				top: 2.05rem !important;
+			}
+		}
+		/* ipad竖屏 */
+		
+		@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+			header {
+				height: 2.7rem !important;
+			}
+			.search-box {
+				padding: 0.155rem 0.3rem;
+				height: 1rem !important;
+			}
+			.select-time {
+				height: 0.85rem;
+				line-height: 0.85rem;
+			}
+			.start-time,
+			.end-time {
+				height: 0.85rem;
+				line-height: 0.85rem;
+			}
+			.mui-bar-nav~.mui-content {
+				padding-top: 2.71rem !important;
+			}
+			#pullrefresh {
+				padding-top: 2.71rem !important;
+			}
+			.personalInfo {
+				height: 0.9rem;
+				line-height: 0.9rem;
+			}
+			.infoLeft,
+			.infoRight {
+				height: 0.9rem;
+				line-height: 0.9rem;
+				font-size: 0.24rem;
+			}
+			.infoLeft>span {
+				padding-left: 0.3rem !important;
+			}
+			.infoRight>span {
+				font-size: 0.24rem;
+			}
+			.infoRight>small {
+				font-size: 0.24rem;
+				margin-left: 0.05rem;
+			}
+			/*下来刷新*/
+			.mui-bar-nav~.mui-content .mui-pull-top-pocket {
+				top: 2.71rem !important;
+			}
+		}
+		
+		html,
+		body {
+			background-color: #efeff4;
+		}
+		
+		p {
+			text-indent: 11px;
+		}
+		
+		span.mui-icon {
+			font-size: 14px;
+			color: #007aff;
+			margin-left: -15px;
+			padding-right: 10px;
+		}
+		
+		.mui-off-canvas-left {
+			color: #fff;
+		}
+		
+		.title {
+			margin: 35px 15px 10px;
+		}
+		
+		.title+.content {
+			margin: 10px 15px 35px;
+			color: #bbb;
+			text-indent: 1em;
+			font-size: 14px;
+			line-height: 24px;
+		}
+		
+		input {
+			color: #000;
+		}
+	</style>
+	</head>
+
+	<body>
+		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable">
+			<!--侧滑菜单部分-->
+			<aside id="offCanvasSide" class="mui-off-canvas-left" style="background: #fff !important;">
+				<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<div class="titleBox">
+							<div class="icon"></div>
+							<h5 class="ceTitle">账&emsp;&emsp;户</h5>
+						</div>
+						<div class="content">
+							<div class="role same">
+		                        <label>角色：</label>
+		                        <span></span>
+		                        <a class="role_name"></a>
+		                    </div>
+							<p class="btnBox">
+								<button  type="button" class="mui-btn mui-btn-danger mui-btn-block exitBtn1" style="padding: 5px 20px;">角色切换</button>
+								<button id="offCanvasHide" type="button" class="mui-btn mui-btn-danger mui-btn-block exitBtn" style="padding: 5px 20px;">退出账号</button>
+							</p>
+
+						</div>
+					</div>
+				</div>
+			</aside>
+			<!--主界面部分-->
+			<div class="mui-inner-wrap">
+				<header class="mui-bar mui-bar-nav">
+					<div class="head">
+						<a href="#offCanvasSide" class="mui-icon mui-action-menu mui-pull-left iconTit" style="line-height: 0.89rem;padding: 0 0.2rem;font-size: 0.4rem;color: #fff;font-weight: bold;"></a>
+						<h1 class="mui-title title">项目确认单列表</h1>
+					</div>
+					<!--搜索框-->
+					<div class="mui-indexed-list-search mui-input-row mui-search search-box">
+						<span>
+					<input type="text" class="search" placeholder="输入客户名或订单号搜索" />
+			    </span>
+					</div>
+					<div class="select-time">
+						<div class="start-time">
+							<span></span>
+							<a id='startTime' data-options='{&quot;value&quot;:&quot;2015-10-10 10:10&quot;,&quot;beginYear&quot;:2010,&quot;endYear&quot;:2040}' class="startTimeBtn">开始时间</a>
+						</div>
+						<small></small>
+						<div class="end-time">
+							<span></span>
+							<a id='endTime' data-options='{&quot;value&quot;:&quot;2015-10-10 10:10&quot;,&quot;beginYear&quot;:2010,&quot;endYear&quot;:2040}' class="endTimeBtn">结束时间</a>
+						</div>
+					</div>
+				</header>
+				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+					<div id="pullrefresh" class="mui-scroll-wrapper" style="padding-top:3.1rem;z-index: 0;box-shadow: 0 0 6px #999 ;">
+						<div class="mui-scroll">
+							<ul class="mui-table-view mui-table-view-chevron oUl" style="background:none ;">
+
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- off-canvas backdrop -->
+				<div class="mui-off-canvas-backdrop" style="box-shadow: 0 0 0 rgba(0, 0, 0, .5), 4px 0 4px rgba(0, 0, 0, .5) !important;"></div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../js/mui.js"></script>
+		<script type="text/javascript" src="../js/mui.picker.min.js"></script>
+		<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="../js/rem.js"></script>
+		<script type="text/javascript" src="../js/jquery-form.js"></script>
+		<script type="text/javascript" src="../js/projectConfirmationList.js"></script>
+		<script src="../js/SearchNumber.js"></script>
+	</body>
+
+</html>

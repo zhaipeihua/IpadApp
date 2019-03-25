@@ -1,0 +1,27 @@
+html,body{
+	width: 100%;
+	height: 100%;
+}
+header {
+    background: -webkit-linear-gradient(left, #0486fe, #04a7ff);
+	box-shadow: 0 0 0 !important;
+	height: 0.89rem !important;
+}
+.title {
+    color: #fff !important;
+    height: 0.89rem !important;
+    line-height: 0.89rem !important;
+    font-size: 0.36rem !important;
+}
+.backIcon {
+    width: .5rem;
+    height: .89rem;
+    display: inline-block;
+    float: left;
+    background: url(../iconAll/img/arrow.png) left center no-repeat;
+    background-size: 50% 50%;
+}
+.mui-bar-nav~.mui-content {
+    padding-top: 0.89rem !important;
+    height: 100%;
+}
